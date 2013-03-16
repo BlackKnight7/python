@@ -1,10 +1,19 @@
+#################################################################
+#					main function relationship
+#  				computeweight<----------computeDistance
+#				|
+#compute<--------
+#				|
+#				iterpolate<----------computeLineKB
+#
+
 import arcpy
 import math
 
 insrc='F:\\Users\\young\\Documents\\ArcGIS\\Default.gdb\\Export_output_5_Project'
 #insrc='E:\\OnTheMove\Data\\Export_Output_149.shp'
 def loadData():
-  '''
+  	'''
 	get point number of some feature
 	'''
 	with open('E:\\OnTheMove\\Data\\temp.txt') as f:
@@ -65,6 +74,10 @@ def interpolate(point1,point2,num):
 	return points
 
 def minValue(x,y):
+	'''
+	compare two value
+	return the min
+	'''
 	if x>y:
 		return y
 	else:
@@ -78,6 +91,7 @@ def computeDistance(point1,point2):
 
 def computeLineKB(point1,point2):
 	'''
+	compute k and b of o line
 	'''
 	k=(point1[0]-point2[0])/(point1[1]-point2[1])
 	b=point1[1]-point1[0]*k
@@ -85,6 +99,7 @@ def computeLineKB(point1,point2):
 
 def computeWeight(feature,pointsNum):
 	'''
+	compute weight of every edge of a polygon
 	'''
 	temp=[]	
 	for i in xrange(len(feature)):
@@ -97,6 +112,7 @@ def computeWeight(feature,pointsNum):
 		
 def compute(features,pointsNum):	
 	'''
+	compute desenficated polygon
 	'''
 	Features=[]
 	for feature in features:	
