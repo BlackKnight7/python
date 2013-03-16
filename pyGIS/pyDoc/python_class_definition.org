@@ -17,7 +17,7 @@
     + __mod__求余运算
     + __pow__称方
 ** private attribute for python class
-    / __private_attrs  两个下划线开头，声明该属性为私有，不能在类地外部被使用或直接访问/
+    /__private_attrs  两个下划线开头，声明该属性为私有，不能在类地外部被使用或直接访问/
      /在类内部的方法中使用时 self.__private_attrs/
     
 *example code*
