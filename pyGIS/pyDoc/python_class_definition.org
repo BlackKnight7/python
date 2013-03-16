@@ -20,6 +20,7 @@
     / __private_attrs  两个下划线开头，声明该属性为私有，不能在类地外部被使用或直接访问/
      /在类内部的方法中使用时 self.__private_attrs/
     
+*example code*
 #+BEGIN_SRC
 class people:  
     #定义基本属性  
