@@ -1,6 +1,6 @@
 * python class 
 ** private method for python class 
-  /_private_method 两个下划线开头，声明该方法为私有方法，不能在类地外部调用/
+  __private_method 两个下划线开头，声明该方法为私有方法，不能在类地外部调用_
     + __init__  构造函数，在生成对象时调用
     + __del__   析构函数，释放对象时使用
     + __repr__ 打印，转换
@@ -17,8 +17,8 @@
     + __mod__求余运算
     + __pow__称方
 ** private attribute for python class
-    /__private_attrs  两个下划线开头，声明该属性为私有，不能在类地外部被使用或直接访问/
-     /在类内部的方法中使用时 self.__private_attrs/
+    __private_attrs  两个下划线开头，声明该属性为私有，不能在类地外部被使用或直接访问_
+     _在类内部的方法中使用时 self.__private_attrs_
     
 *example code*
 #+BEGIN_SRC
