@@ -1,0 +1,26 @@
+* python Module and package
+
+** Module
+  _Every .py file can be regard as a module in python,if we want to use some .py module(file),we just copy it to local dir,_
+  _or use sys.path to locate it,then we use 'import' to load it.But it work bad when module surge_
+  _python在执行import语句时需执行过程_
+    + 创建一个新的，空的module对象（它可能包含多个module）；
+    + 把这个module对象插入sys.module中
+    + 装载module的代码（如果需要，首先必须编译）
+    + 执行新的module中对应的代码。
+×× Pakcage
+  _Package in python is similar to package in java which is used to manage a huge of python file_
+*** How to create a package
+    *package目录*
+    package1/
+    __init__.py
+    subPack1/
+        __init__.py
+        module_11.py
+        module_12.py
+        module_13.py
+    subPack2/
+        __init__.py
+        module_21.py
+        module_22.py
+    
