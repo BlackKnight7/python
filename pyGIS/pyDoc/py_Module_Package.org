@@ -9,10 +9,10 @@
     + 装载module的代码（如果需要，首先必须编译）
     + 执行新的module中对应的代码。
 ×× Pakcage
-  _Package in python is similar to package in java which is used to manage a huge of python file_
+  *Package in python is similar to package in java which is used to manage a huge of python file*
 *** How to create a package
     *package目录*
-    package1/
+   package1/
     __init__.py
     subPack1/
         __init__.py
