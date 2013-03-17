@@ -7,9 +7,12 @@ class GeoObejct(object):
 
 class GeoPoint(GeoObejct):
 	"""docstring for GeoPoint"""
-	def __init__(self, arg):
+	x=0.0
+	y=0.0
+	def __init__(self, x,y):
 		super(GeoPoint, self).__init__()
-		self.arg = arg
+		self.x=x
+		slef.y=y
 		
 
 class GeoLine(GeoObejct):

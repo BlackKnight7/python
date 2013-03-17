@@ -6,17 +6,37 @@
 #				|
 #				iterpolate<----------computeLineKB
 #
+#Requirment 1:shapefile which need to be point that transformed by polygon,and the transform rule is 'feature turing point to point'
+#			2:shapefile of a polygon
+#
 
 import arcpy
 import math
 
-insrc='F:\\Users\\young\\Documents\\ArcGIS\\Default.gdb\\Export_output_5_Project'
+#insrc='F:\\Users\\young\\Documents\\ArcGIS\\Default.gdb\\Export_output_5_Project'
+insrc=''#location of the shapefile
+
+def getPolygonDetail(infc):
+	'''
+	get details of the polygon
+	'''
+	desc = arcpy.Describe(infc)
+	shapefieldname = desc.ShapeFieldName
+	rows = arcpy.SearchCursor(infc)
+	for row in rows:
+   	feat = row.getValue(shapefieldname)
+    	for part in feat:	
+    		with open('temp.txt','w') as f:
+    			f.writelines(str(len(part)))
+
 #insrc='E:\\OnTheMove\Data\\Export_Output_149.shp'
 def loadData():
   	'''
 	get point number of some feature
 	'''
-	with open('E:\\OnTheMove\\Data\\temp.txt') as f:
+	#with open('E:\\OnTheMove\\Data\\temp.txt') as f:
+	#	return f.readlines()
+	with open('temp.txt') as f:
 		return f.readlines()
 
 def getLonLat():
@@ -149,7 +169,7 @@ if __name__=='__main__':
 	print len(features)
 	Features=compute(features,200)
 	print len(Features)
-	with open('E:\\OnTheMove\\Data\\LonLat.txt','w') as f:
+	with open('LonLat.txt','w') as f:
 		for x in Features:
 			for y in x:
 				f.writelines('%s    \t%s    \t%s\n'%(len(x),y[0],y[1]))				
