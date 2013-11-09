@@ -9,7 +9,7 @@ def V1_99(start,end):
     magicstring=''
     for i in seq:
         row=''
-        for j in xrange(i):
+        for j in range(i):
             row=row+'%s*%s=%s\t'%(i,j+1,i*(j+1))        
         magicstring+=row+'\n'
     return magicstring
